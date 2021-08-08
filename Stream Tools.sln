@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stream Timer", "Stream Timer\Stream Timer.csproj", "{8570D026-993B-4929-AFA3-4D3CF6BBCB91}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Binaries", "Binaries", "{4C286B64-951B-4057-A7A5-CAC72FD2FE89}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Stream Tools Installer", "Stream Tools Installer\Stream Tools Installer.vdproj", "{3B114F93-718E-44A0-8D0E-D292434D8FE1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,8 @@ Global
 		{8570D026-993B-4929-AFA3-4D3CF6BBCB91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8570D026-993B-4929-AFA3-4D3CF6BBCB91}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8570D026-993B-4929-AFA3-4D3CF6BBCB91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B114F93-718E-44A0-8D0E-D292434D8FE1}.Debug|Any CPU.ActiveCfg = Debug
+		{3B114F93-718E-44A0-8D0E-D292434D8FE1}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

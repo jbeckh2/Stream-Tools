@@ -30,24 +30,25 @@ namespace Stream_Timer
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStreamTimer));
             this.lblDate = new System.Windows.Forms.Label();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.dtpTime = new System.Windows.Forms.DateTimePicker();
             this.lblTime = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblCurrentCountDown = new System.Windows.Forms.Label();
-            this.lblFormat = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtMessage = new System.Windows.Forms.TextBox();
+            this.chkDisplayMessage = new System.Windows.Forms.CheckBox();
+            this.btnBrowse = new System.Windows.Forms.Button();
+            this.txtFile = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtFormat = new System.Windows.Forms.TextBox();
+            this.lblFormat = new System.Windows.Forms.Label();
+            this.lblCurrentCountDown = new System.Windows.Forms.Label();
             this.btnStartStop = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtFile = new System.Windows.Forms.TextBox();
-            this.btnBrowse = new System.Windows.Forms.Button();
             this.sfdFile = new System.Windows.Forms.SaveFileDialog();
-            this.chkDisplayMessage = new System.Windows.Forms.CheckBox();
-            this.txtMessage = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -111,14 +112,69 @@ namespace Stream_Timer
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Setup";
             // 
-            // lblCurrentCountDown
+            // label2
             // 
-            this.lblCurrentCountDown.Location = new System.Drawing.Point(6, 16);
-            this.lblCurrentCountDown.Name = "lblCurrentCountDown";
-            this.lblCurrentCountDown.Size = new System.Drawing.Size(229, 69);
-            this.lblCurrentCountDown.TabIndex = 5;
-            this.lblCurrentCountDown.Text = "default";
-            this.lblCurrentCountDown.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 199);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 13);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Message";
+            // 
+            // txtMessage
+            // 
+            this.txtMessage.Location = new System.Drawing.Point(6, 218);
+            this.txtMessage.Multiline = true;
+            this.txtMessage.Name = "txtMessage";
+            this.txtMessage.Size = new System.Drawing.Size(229, 51);
+            this.txtMessage.TabIndex = 10;
+            // 
+            // chkDisplayMessage
+            // 
+            this.chkDisplayMessage.AutoSize = true;
+            this.chkDisplayMessage.Checked = true;
+            this.chkDisplayMessage.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkDisplayMessage.Location = new System.Drawing.Point(6, 176);
+            this.chkDisplayMessage.Name = "chkDisplayMessage";
+            this.chkDisplayMessage.Size = new System.Drawing.Size(147, 17);
+            this.chkDisplayMessage.TabIndex = 9;
+            this.chkDisplayMessage.Text = "Display Message At End?";
+            this.chkDisplayMessage.UseVisualStyleBackColor = true;
+            this.chkDisplayMessage.CheckedChanged += new System.EventHandler(this.chkDisplayMessage_CheckedChanged);
+            // 
+            // btnBrowse
+            // 
+            this.btnBrowse.Location = new System.Drawing.Point(182, 137);
+            this.btnBrowse.Name = "btnBrowse";
+            this.btnBrowse.Size = new System.Drawing.Size(53, 23);
+            this.btnBrowse.TabIndex = 8;
+            this.btnBrowse.Text = "Browse";
+            this.btnBrowse.UseVisualStyleBackColor = true;
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
+            // 
+            // txtFile
+            // 
+            this.txtFile.Location = new System.Drawing.Point(7, 140);
+            this.txtFile.Name = "txtFile";
+            this.txtFile.Size = new System.Drawing.Size(169, 20);
+            this.txtFile.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 117);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Output File";
+            // 
+            // txtFormat
+            // 
+            this.txtFormat.Location = new System.Drawing.Point(7, 85);
+            this.txtFormat.Name = "txtFormat";
+            this.txtFormat.Size = new System.Drawing.Size(226, 20);
+            this.txtFormat.TabIndex = 5;
+            this.txtFormat.Text = "hh:mm:ss";
             // 
             // lblFormat
             // 
@@ -129,13 +185,14 @@ namespace Stream_Timer
             this.lblFormat.TabIndex = 4;
             this.lblFormat.Text = "Output Format";
             // 
-            // txtFormat
+            // lblCurrentCountDown
             // 
-            this.txtFormat.Location = new System.Drawing.Point(7, 85);
-            this.txtFormat.Name = "txtFormat";
-            this.txtFormat.Size = new System.Drawing.Size(226, 20);
-            this.txtFormat.TabIndex = 5;
-            this.txtFormat.Text = "hh:mm:ss";
+            this.lblCurrentCountDown.Location = new System.Drawing.Point(6, 16);
+            this.lblCurrentCountDown.Name = "lblCurrentCountDown";
+            this.lblCurrentCountDown.Size = new System.Drawing.Size(229, 69);
+            this.lblCurrentCountDown.TabIndex = 5;
+            this.lblCurrentCountDown.Text = "default";
+            this.lblCurrentCountDown.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnStartStop
             // 
@@ -161,66 +218,10 @@ namespace Stream_Timer
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Current Count Down";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 117);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Output File";
-            // 
-            // txtFile
-            // 
-            this.txtFile.Location = new System.Drawing.Point(7, 140);
-            this.txtFile.Name = "txtFile";
-            this.txtFile.Size = new System.Drawing.Size(169, 20);
-            this.txtFile.TabIndex = 7;
-            // 
-            // btnBrowse
-            // 
-            this.btnBrowse.Location = new System.Drawing.Point(182, 137);
-            this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(53, 23);
-            this.btnBrowse.TabIndex = 8;
-            this.btnBrowse.Text = "Browse";
-            this.btnBrowse.UseVisualStyleBackColor = true;
-            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
-            // 
             // sfdFile
             // 
             this.sfdFile.DefaultExt = "txt";
             this.sfdFile.Filter = "Text Files|*.txt";
-            // 
-            // chkDisplayMessage
-            // 
-            this.chkDisplayMessage.AutoSize = true;
-            this.chkDisplayMessage.Checked = true;
-            this.chkDisplayMessage.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkDisplayMessage.Location = new System.Drawing.Point(6, 176);
-            this.chkDisplayMessage.Name = "chkDisplayMessage";
-            this.chkDisplayMessage.Size = new System.Drawing.Size(147, 17);
-            this.chkDisplayMessage.TabIndex = 9;
-            this.chkDisplayMessage.Text = "Display Message At End?";
-            this.chkDisplayMessage.UseVisualStyleBackColor = true;
-            this.chkDisplayMessage.CheckedChanged += new System.EventHandler(this.chkDisplayMessage_CheckedChanged);
-            // 
-            // txtMessage
-            // 
-            this.txtMessage.Location = new System.Drawing.Point(6, 218);
-            this.txtMessage.Multiline = true;
-            this.txtMessage.Name = "txtMessage";
-            this.txtMessage.Size = new System.Drawing.Size(229, 51);
-            this.txtMessage.TabIndex = 10;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 199);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 13);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Message";
             // 
             // btnSave
             // 
@@ -242,6 +243,7 @@ namespace Stream_Timer
             this.Controls.Add(this.btnStartStop);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmStreamTimer";
             this.Text = "Stream Timer";
             this.Load += new System.EventHandler(this.frmStreamTimer_Load);
