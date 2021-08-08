@@ -9,6 +9,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Binaries", "Binaries", "{4C
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Stream Tools Installer", "Stream Tools Installer\Stream Tools Installer.vdproj", "{3B114F93-718E-44A0-8D0E-D292434D8FE1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "v1", "v1", "{20B745DB-FC6D-4AC5-81D7-11A6B38B8FEA}"
+	ProjectSection(SolutionItems) = preProject
+		Stream Tools Installer\Release\Stream Tools Installer.msi = Stream Tools Installer\Release\Stream Tools Installer.msi
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +29,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{20B745DB-FC6D-4AC5-81D7-11A6B38B8FEA} = {4C286B64-951B-4057-A7A5-CAC72FD2FE89}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9E8DF574-C75D-43E9-8EE9-7E4F1DCE308E}
